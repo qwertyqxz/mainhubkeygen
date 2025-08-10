@@ -1,167 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Checkpoint</title>
-  <style>
-    body {
-      background-color: #0d0d0d;
-      color: white;
-      font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      overflow: hidden;
-      margin: 0;
-      position: relative;
-    }
-
-    .waves {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: 0;
-      background: repeating-linear-gradient(
-        135deg,
-        rgba(255, 0, 150, 0.1) 0px,
-        rgba(255, 0, 150, 0.1) 2px,
-        transparent 2px,
-        transparent 20px
-      );
-      mask-image: radial-gradient(circle at center, rgba(255,255,255,0.8) 0%, transparent 80%);
-      animation: moveWaves 15s linear infinite;
-      background-repeat: repeat;
-      background-size: 200% 200%;
-    }
-
-    @keyframes moveWaves {
-      0% { background-position: 0 0; }
-      100% { background-position: 100% 100%; }
-    }
-
-    .message {
-      text-align: center;
-      animation: fadeIn 2s ease-in-out;
-      z-index: 1;
-    }
-
-    .message h1 {
-      font-size: 3em;
-      margin-bottom: 0.5em;
-    }
-
-    .message p {
-      font-size: 1.2em;
-      opacity: 0.7;
-    }
-
-    .button {
-      margin: 1em;
-      padding: 1em 2em;
-      background-color: #111111;
-      border: white 2px solid;
-      border-radius: 10px;
-      font-size: 1em;
-      color: rgb(255, 75, 210);
-      cursor: pointer;
-      animation: fadeIn 3s ease-in-out;
-    }
-
-    .button:hover {
-      background-color: #000000;
-    }
-
-    .key-container {
-      margin-top: 1.5em;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    .key-field {
-      width: 300px;
-      padding: 0.8em;
-      font-size: 1em;
-      border-radius: 5px;
-      border: none;
-      text-align: center;
-      background-color: #1a1a1a;
-      color: #fff;
-    }
-
-    #copyNotice {
-      margin-top: 1em;
-      color: lightgreen;
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-      font-weight: bold;
-      font-size: 1em;
-      height: 1.5em;
-    }
-
-    #copyNotice.show {
-      opacity: 1;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+<meta charset="UTF-8">
+<title>MainKey</title>
+<style>
+body{background-color:#0d0d0d;color:#fff;font-family:'Segoe UI',sans-serif;display:flex;justify-content:center;align-items:center;height:100vh;overflow:hidden;margin:0;position:relative}
+.waves{position:absolute;width:100%;height:100%;top:0;left:0;z-index:0;background:repeating-linear-gradient(135deg,rgba(255,0,150,.1)0,rgba(255,0,150,.1)2px,transparent 2px,transparent 20px);mask-image:radial-gradient(circle at center,rgba(255,255,255,.8)0,transparent 80%);animation:mv 15s linear infinite;background-repeat:repeat;background-size:200% 200%}
+@keyframes mv{0%{background-position:0 0}100%{background-position:100% 100%}}
+.message{text-align:center;animation:fadeIn 2s ease-in-out;z-index:1}
+.message h1{font-size:3em;margin-bottom:.5em}
+.message p{font-size:1.2em;opacity:.7}
+.button{margin:1em;padding:1em 2em;background-color:#111;border:#fff 2px solid;border-radius:10px;font-size:1em;color:rgb(255,75,210);cursor:pointer;animation:fadeIn 3s ease-in-out}
+.button:hover{background-color:#000}
+.key-container{margin-top:1.5em;animation:fadeIn 2s ease-in-out}
+.key-field{width:300px;padding:.8em;font-size:1em;border-radius:5px;border:none;text-align:center;background-color:#1a1a1a;color:#fff}
+#copyNotice{margin-top:1em;color:lightgreen;opacity:0;transition:opacity .5s ease-in-out;font-weight:bold;font-size:1em;height:1.5em}
+#copyNotice.show{opacity:1}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+</style>
 </head>
 <body>
-
-  <div class="waves"></div>
-
-  <div class="message" id="output">
-    <!-- Dynamischer Inhalt kommt hier rein -->
-  </div>
-
-  <script>
-    const allowedRef = "https://linkvertise.com/";
-    const referrer = document.referrer;
-
-    const output = document.getElementById("output");
-
-    // KEY DEFINITION (nur hier veränderbar)
-    const key = "QUANTUMHUB_TqLpXw9RzKvYsMp7Wq7";
-
-    if (referrer.includes(allowedRef)) {
-      output.innerHTML = `
-        <h1>Quantum Key Generator</h1>
+<div class="waves"></div>
+<div class="message" id="o0"></div>
+<script>
+(function(){
+    const _0xk=["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x6C\x69\x6E\x6B\x76\x65\x72\x74\x69\x73\x65\x2E\x63\x6F\x6D\x2F",
+                 document.referrer,
+                 "o0",
+                 "getElementById",
+                 "\x51\x55\x41\x4E\x54\x55\x4D\x48\x55\x42\x5F\x54\x71\x4C\x70\x58\x77\x39\x52\x7A\x4B\x76\x59\x73\x4D\x70\x37\x57\x71\x37",
+                 "includes",
+                 "innerHTML"];
+    const _o=document[_0xk[3]](_0xk[2]);
+    if((_0xk[1])[_0xk[5]](_0xk[0])){
+        _o[_0xk[6]]=`<h1>Quantum Key Generator</h1>
         <p>Key is HWID locked!</p>
         <p>Key sharing will <strong>result in a ban</strong>.</p>
         <p>Your Main Hub Key got successfully generated!</p>
-
         <div class="key-container">
-          <input type="text" id="keyField" class="key-field" value="${key}" readonly />
-          <div>
-            <button class="button" onclick="copyKey()">Copy Key</button>
-          </div>
-          <div id="copyNotice">Key copied!</div>
-        </div>
-      `;
+            <input type="text" id="kF" class="key-field" value="${_0xk[4]}" readonly />
+            <div>
+                <button class="button" onclick="(function(){var k=document.getElementById('kF');var n=document.getElementById('cN');k.select();k.setSelectionRange(0,99999);document.execCommand('copy');n.classList.add('show');setTimeout(()=>{n.classList.remove('show')},2000)})()">Copy Key</button>
+            </div>
+            <div id="cN">Key copied!</div>
+        </div>`;
     } else {
-      output.innerHTML = `
-        <h1>Access Denied</h1>
-        <p>You must visit this page from Linkvertise to proceed.</p>
-      `;
+        _o[_0xk[6]]="<h1>Access Denied</h1><p>You must visit this page from Linkvertise to proceed.</p>";
     }
-
-    function copyKey() {
-      const keyField = document.getElementById("keyField");
-      const notice = document.getElementById("copyNotice");
-      keyField.select();
-      keyField.setSelectionRange(0, 99999);
-      document.execCommand("copy");
-
-      notice.classList.add("show");
-      setTimeout(() => {
-        notice.classList.remove("show");
-      }, 2000);
-    }
-  </script>
-
+})();
+</script>
 </body>
 </html>
